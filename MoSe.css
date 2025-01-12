@@ -1,0 +1,257 @@
+/* General Styles */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    min-height: 300vh; /* Increase to allow more scrolling */
+    background: url('background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    font-family: 'Poppins', sans-serif;
+    overflow-y: auto; /* Allow vertical scrolling */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+html {
+    overflow-y: scroll; /* Ensure vertical scrollbar is always visible */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 150px;
+    padding: 20px 100px;
+    background: rgba(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    transition: top 0.3s;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+}
+
+.navbar a {
+    position: relative;
+    font-size: 18px;
+    color: #fff;
+    font-weight: 500;
+    text-decoration: none;
+    margin-left: 40px;
+}
+
+.navbar a::before {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #fff;
+    transition: .3s;
+}
+
+.navbar a:hover::before {
+    width: 100%;
+}
+
+.subject1,
+.subject2,
+.subject3 ,
+.subject4{
+    display: block;
+    color: #fff;
+    font-size: 70px;
+    font-weight: bold;
+    position: absolute; /* Changed from fixed to absolute */
+    top: 40%; /* Increased by 20% */
+    left: 75px; /* Adjusts the horizontal position to the left */
+    z-index: 99;
+}
+
+.subject1 {
+    top: 20%; /* Adjusted from 20% to 40% */
+}
+
+.subject2 {
+    top: 127%; /* Adjusted from 121% to 141% */
+}
+
+.subject3 {
+    top: 240%;
+}
+
+.subject4 {
+    top: 350%;
+}
+.image-text {
+    display: block;
+    color: #7b7992;
+    margin-bottom: 15px;
+    font-size: 50px;
+    font-weight: bold;
+}
+
+/* Container for text boxes */
+.container {
+    display: flex;
+    justify-content: space-between; /* Space between the boxes */
+    align-items: flex-start;
+    width: 90%; /* Adjust as needed */
+    position: absolute;
+    left: 50%; /* Center the container horizontally */
+    transform: translateX(-50%); /* Adjust for perfect centering */
+}
+
+/* Top Movies Container */
+.container:nth-of-type(1) {
+    top: 33%; /* Increased by 20% (from 33%) */
+}
+
+/* Least-Watched Movies Container */
+.container:nth-of-type(2) {
+    top: 140%; /* Increased by 20% (from 141%) */
+}
+.container:nth-of-type(3) {
+    top: 253%; /* Increased by 20% (from 141%) */
+}
+
+.container:nth-of-type(4) {
+    top: 363%; /* Increased by 20% (from 141%) */
+}
+
+
+/* Text Box Styles */
+.text-box {
+    background-color: white;
+    color: black;
+    width: 380px;
+    height: auto;
+    border: 2px solid black;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 20px;
+    margin: 20px;
+    box-sizing: border-box;
+    position: relative;
+}
+
+/* General Image Styles */
+.image {
+    width: 100%;  /* Adjust to fit the width of the text box */
+    height: 250px; /* Fixed height to maintain uniformity */
+    object-fit: cover; /* Ensures the image covers the area without distortion */
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+
+.container .text-box:nth-child(3) .image {
+    object-position: center 20%; /* Adjust the vertical position of the image */
+}
+
+.hover-number {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    font-weight: bold;
+    color: #7b7992;
+    font-size: 120px !important;
+}
+
+/* Hover Effect to Show Number */
+.text-box:hover .hover-number {
+    opacity: 1;
+}
+
+.text-box:hover .image {
+    opacity: 0.3;
+}
+
+/* Image Text Styling */
+.image-text {
+    display: block;
+    margin-bottom: 15px;
+    font-size: 50px;
+}
+
+/* Content Styles */
+.content {
+    display: block;
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+
+/* Align labels and values on one line */
+.info-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.info-row span {
+    font-size: 16px;
+}
+
+/* Right align the values */
+.right-align {
+    text-align: right;
+    flex-grow: 1;
+    font-color: black;
+}
+
+.left-align {
+    color: #7b7992;
+    font-weight: bold;
+}
+
+/* Add space between items */
+.info-row {
+    gap: 15px;
+}
+
+/* Third Image in Least-Watched Movies */
+.container:nth-of-type(2) .text-box:nth-child(3) .image {
+    object-position: center 60%; /* Adjust the vertical position of the image */
+}
+/* Second Image in Least-Watched Movies */
+.container:nth-of-type(2) .text-box:nth-child(2) .image {
+    object-position: center 27%; /* Adjust the vertical position of the image */
+}
+
+/* First Image in Least-Watched Movies */
+.container:nth-of-type(2) .text-box:nth-child(1) .image {
+    object-position: center 27%; /* Adjust the vertical position of the image */
+}
+
+/* Second Image in Least-Watched Movies */
+.container:nth-of-type(3) .text-box:nth-child(2) .image {
+    object-position: center 15%; /* Adjust the vertical position of the image */
+}
+
+/* First Image in Least-Watched Movies */
+.container:nth-of-type(3) .text-box:nth-child(1) .image {
+    object-position: center 10%; /* Adjust the vertical position of the image */
+}
+

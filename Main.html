@@ -7,15 +7,16 @@
     <link rel="stylesheet" href="MainStyle.css">
 </head>
 <body>
-<!-- Starting image container -->
-<div class="starting-screen">
-    <img src="start.jpg" alt="Starting Background" class="starting-image">
-    <div class="starting-text">Welcome to Our Website</div>
-</div>
+
+
+
+<!--<img src="background1.jpg" alt="on back" style="position: absolute; top:0; left: 0; width: 100%; height: 100%;" >-->
+
 
 <!-- Header Section -->
 <header class="header">
     <img class="element" src="DisneyLogo.png" width="200px" height="400px">
+
     <nav class="navbar">
         <a href="Main.html">Home</a>
         <a href="ThemePark.html">Theme Park</a>
@@ -24,8 +25,22 @@
     </nav>
 </header>
 
-<span class = "subject1">Awards</span>
-<table class="table">
+<!-- Welcome Section -->
+<div class="welcome-container">
+
+    <img src="start.png" alt="start image" class="welcome-image">
+    <div class="background-welcome">
+        <h1>Welcome to Disney Land</h1>
+        <p>"Step into the magic"</p>
+        <p>Get to know more about...</p>
+        <a href="#Awards">Awards</a>
+        <a href="#Story">Story of Disney</a>
+    </div>
+</div>
+
+
+<table id = "Awards" class="table">
+
     <thead>
     <tr>
         <th scope="col">Year</th>
@@ -37,42 +52,42 @@
     <tr>
         <td>1932</td>
         <td>
-            <span class="award" data-image="mickey_mouse.jpg">Honorary Academy Award</span>
+            <span >Honorary Academy Award</span>
         </td>
         <td>For creating Mickey Mouse.</td>
     </tr>
     <tr>
         <td>1939</td>
         <td>
-            <span class="award" data-image="snow_white.jpg">Special Academy Award</span>
+            <span >Special Academy Award</span>
         </td>
         <td>For Snow White and the Seven Dwarfs, awarded along with seven miniature Oscars.</td>
     </tr>
     <tr>
         <td>1955</td>
         <td>
-            <span class="award" data-image="emmy_awards.jpg">Emmy Award</span>
+            <span >Emmy Award</span>
         </td>
         <td>"Best Producer – Film Series" for the Disneyland TV series.</td>
     </tr>
     <tr>
         <td>1964</td>
         <td>
-            <span class="award" data-image="freedom_medal.jpg">Presidential Medal of Freedom</span>
+            <span >Presidential Medal of Freedom</span>
         </td>
         <td>Awarded by President Lyndon B. Johnson.</td>
     </tr>
     <tr>
         <td>2024</td>
         <td>
-            <span class="award" data-image="shogun.jpg">'Shogun' Wins Best Drama</span>
+            <span >'Shogun' Wins Best Drama</span>
         </td>
         <td>Secured Best Drama at the 2024 Emmy Awards.</td>
     </tr>
     </tbody>
 </table>
-<span class = "subject2">Story</span>
-<div class="blog-card">
+
+<div id = "Story" class="blog-card">
 
     <input type="radio" name="select" id="tap-1" checked>
     <input type="radio" name="select" id="tap-2">
@@ -86,7 +101,7 @@
 
     <div class="inner-part">
         <label for="tapImg" class="img">
-            <img class="img-1" src="founder.jpg" alt="Mr. Walt">
+            <img class="img-1" src="Home/founder.jpg" alt="Mr. Walt">
         </label>
         <div class="content content-1">
             <br><br>
@@ -132,7 +147,7 @@
     </div>
     <div class="inner-part">
         <label for="tapImg" class="img">
-            <img class="img-2" src="Animations.jpg" alt="Mr. Walt">
+            <img class="img-2" src="Home/Animations.jpg" alt="Mr. Walt">
         </label>
         <div class="content content-2">
             <br><br><br><br><br><br>
@@ -172,7 +187,7 @@
     </div>
     <div class="inner-part">
         <label for="tapImg" class="img">
-            <img class="img-3" src="MickeyMausClub.jpg" alt="Mr. Walt">
+            <img class="img-3" src="Home/MickeyMausClub.jpg" alt="Mr. Walt">
         </label>
         <div class="content content-3">
             <br><br><br><br><br><br>

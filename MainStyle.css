@@ -8,68 +8,8 @@
     font-family: 'Poppins', sans-serif;
 }
 
-
-/* Starting Screen Styles */
-.starting-screen {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 130%; /* Adjust to cover only the top part */
-    background-color: rgba(0, 0, 0, 0.6); /* Optional semi-transparent background for text contrast */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    z-index: 1000;
-    overflow: hidden;
-    animation: popOut 1s ease-out forwards; /* Pop-out animation */
-}
-
-/* Image styles */
-.starting-image {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1; /* Ensure the image stays behind the text */
-}
-
-/* Text Styles */
-.starting-text {
-    font-size: 2rem;
-    color: #fff;
-    font-weight: 700;
-    text-align: center;
-    z-index: 1; /* Ensure the text stays above the image */
-}
-
-/* Pop-Out Animation */
-@keyframes popOut {
-    0% {
-        transform: translateY(-100%);
-        opacity: 0;
-    }
-    50% {
-        transform: translateY(10%);
-        opacity: 1;
-    }
-    100% {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
-
-
-
-
-
-
-
 body {
-    min-height: 300vh; /* Increase to allow more scrolling */
+    min-height: 287vh; /* Increase to allow more scrolling */
     background: url('background.jpg') no-repeat center center fixed;
     background-size: cover;
     background-position: center;
@@ -100,6 +40,65 @@ html {
     z-index: 1000;
     transition: top 0.3s;
 }
+
+
+/* Starting Screen Styles */
+.starting-screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 1000;
+    overflow: visible; /* Prevent content overflow */
+    animation: popOut 1s ease-out forwards; /* Pop-out animation */
+}
+
+/* Image styles */
+.starting-image {
+    width: auto; /* Dynamically adjust width */
+    height: 80%; /* Match the height of the viewport */
+    max-height: 100vh; /* Prevent exceeding the viewport height */
+    object-fit: contain; /* Ensure the image scales proportionally */
+    position: absolute;
+    top: 60%; /* Center vertically relative to its container */
+    left: 20px; /* Align to the left of the screen */
+    transform: translateY(-50%); /* Center vertically */
+    z-index: -1; /* Ensure the image stays behind other content */
+}
+
+
+/* Text Styles */
+.starting-text {
+    font-size: 2rem;
+    color: #fff;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 10px;
+    z-index: 11; /* Höher als das Bild */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Leichter Schatten für bessere Lesbarkeit */
+}
+
+
+@keyframes popOut {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    50% {
+        transform: translateY(10%);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
 
 .navbar {
     display: flex;
@@ -139,7 +138,7 @@ html {
     background: #fff;
     border-radius: 25px;
     box-shadow: 0 10px 50px rgba(0, 0, 0, 0.6);
-    top: 135%;
+    top: 150%;
 }
 
 .blog-card .inner-part {
@@ -391,34 +390,13 @@ input[type=checkbox]:checked ~ .more-text {
 
 
 
-/* Styling for awards */
-.award {
-    position: relative;
-    cursor: pointer;
-}
 
-.award:hover::after {
-    content: attr(data-image);
-    position: absolute;
-    top: -100px; /* Move it further down */
-    left: 100%; /* Positioned to the right of the award text */
-    width: 150px;
-    height: 150px;
-    background: #fff; /* Add a background color for better visibility */
-    border: 1px solid #ddd; /* Visible border */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Drop shadow for better visibility */
-    z-index: 10;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 14px; /* Ensure content is readable */
-}
 
 /* Table Styling */
 .table {
     width: 90%;
     position: absolute;
-    top: 90%; /* Position the table 70% from the top of the page */
+    top: 110%; /* Position the table 70% from the top of the page */
     left: 50%;
     transform: translateX(-50%); /* Center the table horizontally */
     border-collapse: collapse;
@@ -439,7 +417,7 @@ input[type=checkbox]:checked ~ .more-text {
     font-weight: bold;
 }
 
-.subject1,
+.subject1
 .subject2{
     display: block;
     color: #fff;
@@ -460,4 +438,87 @@ input[type=checkbox]:checked ~ .more-text {
 .subject2
 {
     top: 121%; /* Adjusts the vertical position */
+}
+
+
+/* Welcome Text Beside Logo */
+.welcome-text {
+    position: absolute;
+    top: 20px;
+    right: 300px;
+    text-align: right;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+.welcome-text h1 {
+    margin: 0;
+    font-size: 32px;
+    line-height: 1.2;
+}
+
+.welcome-text p {
+    margin: 0;
+    font-size: 18px;
+    font-style: italic;
+}
+
+/* Background Image and Text */
+.background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.8;
+}
+/* Container for welcome text and image */
+.welcome-container {
+    display: flex;
+    justify-content: flex-start; /* Align items to the left */
+    align-items: center;
+    gap: 20px; /* Space between image and text */
+    position: absolute;
+    top: 60%; /* Move the container higher */
+    transform: translateY(-50%); /* Center the container vertically */
+    left: 5%; /* Adjust left position */
+}
+
+/* Styling for the image */
+.welcome-image {
+    width: 600px; /* Increase image size */
+    height: auto;
+    animation: popOut 1s ease-out forwards; /* Apply the animation to the image */ }
+
+
+
+/* Styling for the text */
+.background-welcome {
+    color: white;
+    font-size: 32px; /* Make the text bigger */
+    text-shadow: 3px 3px 7px rgba(0, 0, 0, 0.7); /* Stronger text shadow for better visibility */
+}
+
+.background-welcome h1 {
+    margin: 0;
+    font-size: 56px; /* Make the header larger */
+    line-height: 1.2;
+}
+
+.background-welcome p {
+    margin: 10px 0 0;
+    font-size: 24px; /* Increase the font size for the paragraph */
+    font-style: italic;
+}
+
+.background-welcome a {
+    position: relative;
+    font-size: 20px;
+    color: #fff;
+    text-decoration: none;
+    margin-left: 40px;
+    right: 5%;
 }
