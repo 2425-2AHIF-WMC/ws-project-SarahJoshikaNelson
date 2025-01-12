@@ -1,0 +1,428 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    min-height: 100vh; /* Minimum height for viewport */
+    background: url('background.jpg') no-repeat center center fixed;
+    background-size: cover; /* Ensures the background image covers the viewport */
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: auto; /* Allows body height to grow dynamically */
+    font-family: 'Poppins', sans-serif;
+    overflow-y: auto; /* Enable vertical scrolling */
+    overflow-x: hidden; /* Hide horizontal scrolling */
+}
+
+
+html {
+    overflow-y: scroll; /* Ensure vertical scrollbar is always present */
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 150px;
+    padding: 20px 100px;
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+}
+
+.MickeyMausSticker {
+    z-index: 1;
+    width: 15%;
+    height: auto;
+    margin-left: 900px;
+    margin-bottom: -400px;
+    position: absolute;
+}
+
+.BabyDorySticker {
+    z-index: 1;
+    width: 11%;
+    height: auto;
+    margin-right: 900px;
+    margin-top: 1100px;
+    position: absolute; /* Ensure both elements are positioned absolutely */
+}
+
+.RatatuileSticker {
+    z-index: 100;
+    width: 15%;
+    height: auto;
+    margin-left: 900px;
+    margin-top: 1900px;
+    position: absolute;
+}
+.navbar {
+    display: flex;
+    align-items: center;
+}
+
+.navbar a {
+    position: relative;
+    font-size: 18px;
+    color: #fff;
+    font-weight: 500;
+    text-decoration: none;
+    margin-left: 40px;
+}
+
+.navbar a::before {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #fff;
+    transition: .3s;
+}
+
+.navbar a:hover::before {
+    width: 100%;
+}
+
+.country-buttons {
+    position: absolute;
+    top: 22%;
+    left: 10%;
+    z-index: 101;
+    display: flex;
+    gap: 150px; /* Increase gap between buttons */
+}
+
+.toggle-input {
+    display: none;
+}
+
+.toggle-label {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: transparent;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #000;
+    text-decoration: none;
+    position: relative;
+    overflow: visible; /* Allow overflow */
+    color: #fff;
+    transition: all 0.5s;
+}
+.toggle-label>span {
+    font-weight: 600;
+
+}
+.toggle-label:hover {
+    transform: scale(1.1);
+}
+
+.toggle-label::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    width: calc(100% + 20px); /* Extend beyond the button */
+    height: calc(100% + 20px); /* Extend beyond the button */
+    z-index: 0;
+    transition: all 0.5s;
+    border: 1px solid rgba(255,255,255,0.2);
+    background-color: rgba(255,255,255,0.1);
+}
+
+.toggle-label::after {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    width: calc(100% + 20px); /* Extend beyond the button */
+    height: calc(100% + 20px); /* Extend beyond the button */
+    z-index: 0;
+    transition: all 0.5s;
+    border: 1px solid rgba(255,255,255,0.2);
+    background-color: rgba(255,255,255,0.1);
+}
+
+.toggle-label:hover::before {
+    transform: rotate(-45deg);
+    background-color: rgba(255,255,255,0);
+}
+
+.toggle-label:hover::after {
+    transform: rotate(45deg);
+    background-color: rgba(255,255,255,0);
+}
+
+.promo-section {
+    display: none;
+    width: 95%; /* Set a reasonable width */
+    height: 67%; /* Set a reasonable height */
+    position: fixed; /* Use fixed positioning */
+    top: 65%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Center alignment */
+    background-color: #e8e9fc;
+    padding: 20px; /* Adjust padding to ensure content fits */
+    border-radius: 10px;
+    box-sizing: border-box; /* Include padding and border in element's width and height */
+    color: #fff;
+    overflow: auto; /* Handle overflow content */
+    z-index: 102;
+}
+
+.toggle-input:checked + .toggle-label + .promo-section {
+    display: block;
+}
+
+/* Add the new CSS for closing other sections */
+.toggle-input:checked ~ .toggle-input:not(:checked) + .toggle-label + .promo-section {
+    display: none;
+}
+
+
+.promo-details {
+    color: black;
+    overflow: hidden; /* Clear the float */
+    width: calc(70% - 20px); /* Adjust the width considering the margin */
+}
+
+.promo-details  span {
+    font-size: 50px;
+    margin-bottom: 10px;
+}
+
+.promo-details p {
+    margin: 8px 0;
+}
+
+/* Ensure proper spacing and alignment */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.col-md-6 {
+    flex: 0 0 50%;
+    padding: 5px;
+}
+
+.col-md-6 > .FunFact
+{
+
+    color: black;
+    margin: 130px;
+    margin-top: 30px;
+}
+
+/*Resize Carousal*/
+#carouselExampleControls1,
+#carouselExampleControls2,
+#carouselExampleControls3,
+#carouselExampleControls4,
+#carouselExampleControls5,
+#carouselExampleControls6,
+#carouselExampleControls7
+{
+    max-width: 500px; /* Set a maximum width for the carousel */
+    margin: 0 auto; /* Center the carousel */
+    width: 900px;
+    margin-right: 50px;
+}
+
+.carousel-inner img {
+    width: auto; /* Make images fill the carousel width */
+    height: 300px; /* Set a fixed height */
+    object-fit: cover; /* Ensure images cover the container without distortion */
+    border: none; /* Remove borders */
+    margin-left: 2px; /* Adjust this value to move the image to the left */
+    padding: 0; /* Remove paddings */
+}
+
+
+
+/*Resize the Arrows*/
+.carousel-control-prev,
+.carousel-control-next {
+    position: absolute; /* Stay fixed relative to the carousel */
+    top: 50%; /* Center vertically */
+    transform: translateY(-50%); /* Align perfectly with the middle of images */
+    width: 30px; /* Consistent arrow button width */
+    height: 30px; /* Consistent arrow button height */
+    z-index: 10; /* Ensure arrows are above other elements */
+    background-color: rgba(0, 0, 0, 0.5); /* Optional: visible buttons */
+    border-radius: 50%; /* Optional: circular buttons */
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    width: 20px; /* Set the size of the arrow icons */
+    height: 20px; /* Maintain proportionality */
+    transform: scale(1); /* Ensure they don't shrink */
+}
+/* Position Arrows Centrally */
+.carousel-control-prev,
+.carousel-control-next {
+    position: absolute;
+    top: 50%; /* Center vertically */
+    transform: translateY(-50%); /* Align perfectly with the middle */
+    width: 30px; /* Consistent arrow button width */
+    height: 30px; /* Consistent arrow button height */
+    z-index: 10; /* Ensure arrows are above other elements */
+    background-color: rgba(0, 0, 0, 0.5); /* Optional: visible buttons */
+    border-radius: 50%; /* Optional: circular buttons */
+}
+
+/* Adjust Arrow Icons Size */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    width: 20px; /* Adjust icon width */
+    height: 20px; /* Adjust icon height */
+    background-size: contain; /* Ensure proper scaling */
+    transform: scale(1); /* Ensure size consistency */
+
+
+}
+
+/* Optional – Fine-Tune Spacing*/
+#carouselExampleControls {
+    margin-top: 20px; /* Add space above */
+    margin-bottom: 20px; /* Add space below */
+}
+
+/* Toggle input and label for promotion box */
+.toggle-input:checked + .toggle-label + .promo-section {
+    display: block; }
+/* Add new CSS for closing other sections */
+.toggle-input:checked ~ .toggle-input:not(:checked) + .toggle-label + .promo-section {
+    display: none;
+}
+
+/* Adjust Arrow Position to Middle Left within the Promotion Box */
+.promo-section .carousel-control-prev,
+.promo-section .carousel-control-next {
+    position: absolute;
+    top: 50%; /* Center vertically */
+    transform: translateY(-50%); /* Align perfectly with the middle of the promotion box */
+    width: 30px;
+    height: 30px;
+    z-index: 10;
+    background-color: rgba(0, 0, 0, 0.5); /* Optional: visible buttons */
+    border-radius: 50%; /* Optional: circular buttons */
+}
+
+.promo-section .carousel-control-prev {
+    left: 10px; /* Position on the left side */
+}
+
+.promo-section .carousel-control-next {
+    right: 10px; /* Position on the right side */
+}
+
+.promo-section .carousel-control-prev-icon,
+.promo-section .carousel-control-next-icon {
+    width: 20px;
+    height: 20px;
+    background-size: contain;
+    transform: scale(1);
+}
+/* Specific style for the first span inside .promo-section */
+.promo-section > .numbers1 > span:first-of-type,
+.promo-section > .numbers2 > span:first-of-type,
+.promo-section > .numbers3 > span:first-of-type,
+.promo-section > .numbers2Special > span:first-of-type,
+.promo-section > .numbers3Special > span:first-of-type{
+    font-size: 200px; /* Large size */
+    font-weight: 900; /* Extra bold */
+    color: black; /* Black color */
+    position: absolute; /* Absolute positioning */
+    left: 10px; /* Adjust horizontal position as needed */
+    z-index: 1; /* Ensure it appears above other elements */
+    margin-left: 20px;
+}
+
+.promo-section > .numbers2 > span:first-of-type {
+    top: 170%; /* Adjust position to make it extend beyond the promotion box */
+
+}
+
+.promo-section > .numbers3 > span:first-of-type {
+    top: 430%; /* Adjust position to make it extend beyond the promotion box */
+}
+
+.promo-section > .numbers2Special > span:first-of-type {
+    top: 190%; /* Adjust position to make it extend beyond the promotion box */
+}
+
+.promo-section > .numbers3Special > span:first-of-type {
+    top: 360%; /* Adjust position to make it extend beyond the promotion box */
+}
+
+
+
+/* Container and Text Box Styles */
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    position: absolute;
+    top: 35%;
+    width: 100vw;
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+
+.text-box {
+    background-color: white;
+    color: black;
+    width: 1000px;
+    height: 300px;
+    border: 2px solid black;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    align-items: flex-start; /* Align items to the left */
+    justify-content: flex-start; /* Align items to the top */
+    padding: 20px;
+    margin: 20px 0;
+    box-sizing: border-box;
+}
+.text-box1 {
+    background-color: white;
+    color: black;
+    width: 1000px;
+    height: 550px;
+    border: 2px solid black;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    align-items: flex-start; /* Align items to the left */
+    justify-content: flex-start; /* Align items to the top */
+    padding: 20px;
+    margin: 20px 0;
+    box-sizing: border-box;
+}
+.text-box > span,
+.text-box1 > span{
+    font-size: 50px;
+    margin-bottom: 10px;
+}

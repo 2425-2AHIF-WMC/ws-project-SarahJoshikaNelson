@@ -1,46 +1,112 @@
+/* General Styles */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
-*{
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
 
-body{
-    min-height: 100vh;
-    background: url('background.jpg') no-repeat;
+
+/* Starting Screen Styles */
+.starting-screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 130%; /* Adjust to cover only the top part */
+    background-color: rgba(0, 0, 0, 0.6); /* Optional semi-transparent background for text contrast */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 1000;
+    overflow: hidden;
+    animation: popOut 1s ease-out forwards; /* Pop-out animation */
+}
+
+/* Image styles */
+.starting-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1; /* Ensure the image stays behind the text */
+}
+
+/* Text Styles */
+.starting-text {
+    font-size: 2rem;
+    color: #fff;
+    font-weight: 700;
+    text-align: center;
+    z-index: 1; /* Ensure the text stays above the image */
+}
+
+/* Pop-Out Animation */
+@keyframes popOut {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    50% {
+        transform: translateY(10%);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+
+
+
+
+
+
+body {
+    min-height: 300vh; /* Increase to allow more scrolling */
+    background: url('background.jpg') no-repeat center center fixed;
     background-size: cover;
     background-position: center;
-
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100vh;
-    font-family: 'Fire Sans', sans-serif;
-
+    height: auto;
+    font-family: 'Poppins', sans-serif;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
-.header{
+html {
+    overflow-y: scroll;
+}
+
+.header {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
+    height: 150px;
     padding: 20px 100px;
-    background: transparent;
+    background: rgba(0, 0, 0, 0.4);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    z-index: 100;
+    z-index: 1000;
+    transition: top 0.3s;
 }
 
-.logo {
-    font-size: 32px;
-    color: #fff;
-    text-decoration: none;
-    font-weight: 700;
+.navbar {
+    display: flex;
+    align-items: center;
 }
 
-.navbar a{
+.navbar a {
     position: relative;
     font-size: 18px;
     color: #fff;
@@ -49,10 +115,10 @@ body{
     margin-left: 40px;
 }
 
-.navbar a::before{
+.navbar a::before {
     content: '';
     position: absolute;
-    top:100%;
+    top: 100%;
     left: 0;
     width: 0;
     height: 2px;
@@ -60,80 +126,113 @@ body{
     transition: .3s;
 }
 
-.navbar a:hover::before{
+.navbar a:hover::before {
     width: 100%;
 }
 
-.blog-card{
+.blog-card {
     position: absolute;
-    height: 370px;
+    height: 600px;
     width: 100%;
-    max-width: 850px;
+    max-width: 1300px;
     margin: auto;
     background: #fff;
     border-radius: 25px;
-    box-shadow: 0 10px 50px rgba(252,56,56,.6);
+    box-shadow: 0 10px 50px rgba(0, 0, 0, 0.6);
+    top: 135%;
 }
 
-.blog-card .inner-part{
+.blog-card .inner-part {
     display: flex;
     align-items: center;
-    /*justify-content: center;*/
+    justify-content: center;
     padding: 0 25px;
     height: 360px;
-
+    position: absolute;
 }
 
-.inner-part .img{
-    height: 260px;
-    width: 260px;
+.inner-part .img {
+    height: 400px;
+    width: 400px;
     overflow: hidden;
     flex-shrink: 0;
     border-radius: 20px;
-    box-shadow: 2px 3px 15px rgba(252,56,56,.6);
- }
+    box-shadow: 2px 3px 15px rgba(3, 24, 90, 0.6);
+    margin-top: 100px;
+}
 
-
-.img img{
+.img img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     cursor: pointer;
-    /*opacity: 0;*/
+    opacity: 0;
+    transition: .6s;
 }
 
-.content
-{
+#tap-1:checked ~ .inner-part .img-1,
+#tap-2:checked ~ .inner-part .img-2,
+#tap-3:checked ~ .inner-part .img-3 {
+    opacity: 1;
+    transition: .2s;
+}
+
+.content {
     padding: 0 20px 0 35px;
-    width: 5030px;
-    marin-left: 50px;
+    width: 800px;
+    opacity: 0;
+    transition: .6s;
 }
 
-.content span
-{
+#tap-1:checked ~ .inner-part .content-1,
+#tap-2:checked ~ .inner-part .content-2,
+#tap-3:checked ~ .inner-part .content-3 {
+    opacity: 1;
+    margin-left: 0px;
+    z-index: 100;
+    transition-delay: .3s;
+}
+
+.content span {
     display: block;
     color: #7b7992;
     margin-bottom: 15px;
-    font-size: 22px;
+    font-size: 21px;
     font-weight: bold;
 }
 
-.content .title{
-    font-size: 30px;
+.content .title {
+    font-size: 35px;
     font-weight: 700;
     color: #0d0925;
     margin-bottom: 20px;
 }
 
-.content .text{
+.content ul {
+    margin: 40px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.content .text {
     font-size: 19px;
     color: #4e4a67;
     margin-bottom: 30px;
     line-height: 1.5rem;
     text-align: justify;
+    width: 600px;
+    display: none;
 }
 
-.content .button{
+.read-more-toggle {
+    display: none;
+}
+
+.read-more-toggle:checked + .button + .more-content {
+    display: block;
+}
+
+.content .button {
     display: inline-flex;
     padding: 15px 20px;
     border: none;
@@ -143,19 +242,20 @@ body{
     font-weight: 600;
     letter-spacing: 1px;
     border-radius: 50px;
-    border: 1px solid #fd3535;
+    border: 1px solid rgba(0, 0, 48, 0.6);
     cursor: pointer;
-
+    z-index: 200; /* Ensure the button is above other elements */
 }
-.sliders
-{
+
+.sliders {
     position: absolute;
     bottom: 25px;
     left: 65%;
+    z-index: 100;
     transform: translateX(-50%);
 }
 
-.sliders .tap{
+.sliders .tap {
     position: relative;
     height: 10px;
     width: 50px;
@@ -163,24 +263,201 @@ body{
     border-radius: 5px;
     display: inline-flex;
     margin: 0 3px;
-    cursor:pointer;
+    cursor: pointer;
 }
 
-.sliders .tap:before{
+.sliders .tap:before {
     position: absolute;
     content: "";
     top: 0;
     left: 0;
     width: -100%;
     height: 100%;
-    background: red;
+    background: rgba(0, 0, 48, 0.6);
     border-radius: 10px;
     transform: scaleX(0);
     transition: transform .6s;
     transform-origin: left;
 }
 
-.sliders .tap:hover:before{
+.sliders .tap:hover:before {
     transform: scaleX(1);
     width: 100%;
+}
+
+#tap-1 ~ .checked .sliders .tap-1:before,
+#tap-2 ~ .checked .sliders .tap-2:before,
+#tap-3 ~ .checked .sliders .tap-3:before {
+    transform: scaleX(1);
+    width: 100%;
+}
+
+input {
+    display: none;
+}
+
+#toggle {
+    display: none;
+}
+
+#toggle:checked + .button + .text {
+    display: block;
+}
+
+input[type=checkbox] {
+    display: none;
+}
+
+.show-more-label {
+    cursor: pointer;
+    color: blue;
+    text-decoration: underline;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.more-text {
+    display: none;
+}
+
+input[type=checkbox]:checked ~ .more-text {
+    display: inline;
+}
+
+.more-content {
+    display: none;
+}
+
+#read-more-toggle-1:checked ~ .more-content,
+#read-more-toggle-2:checked ~ .more-content,
+#read-more-toggle-3:checked ~ .more-content {
+    display: block;
+}
+
+.button {
+    background-color: #008CBA;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.inner-part {
+    margin: 20px;
+}
+
+.content {
+    margin-top: 10px;
+}
+
+.text-box1,
+.text-box2,
+.text-box3{
+    background-color: white;
+    color: black;
+
+    width: 104%;
+    position: absolute; /* Position absolutely */
+    top: 100%; /* 100% from the top of the parent (.more-content) */
+    left: 0;
+    margin-top: 150px; /* Add some spacing */
+    margin-left: -20px;
+    z-index: 1; /* Ensure it stays on top */
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    padding: 20px;
+}
+.text-box3{
+    height: 620px;;
+}
+
+.text.box1{height: 420px;}
+.text.box1{height: 550px;}
+
+/* Initial hidden state */
+.more-content {
+    display: none;
+}
+
+/* Show when checkbox is checked */
+.read-more-toggle:checked ~ .more-content {
+    display: block;
+}
+
+
+
+/* Styling for awards */
+.award {
+    position: relative;
+    cursor: pointer;
+}
+
+.award:hover::after {
+    content: attr(data-image);
+    position: absolute;
+    top: -100px; /* Move it further down */
+    left: 100%; /* Positioned to the right of the award text */
+    width: 150px;
+    height: 150px;
+    background: #fff; /* Add a background color for better visibility */
+    border: 1px solid #ddd; /* Visible border */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Drop shadow for better visibility */
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px; /* Ensure content is readable */
+}
+
+/* Table Styling */
+.table {
+    width: 90%;
+    position: absolute;
+    top: 90%; /* Position the table 70% from the top of the page */
+    left: 50%;
+    transform: translateX(-50%); /* Center the table horizontally */
+    border-collapse: collapse;
+    border: 2px solid #ddd;
+    background-color: #e8e9fc;
+}
+
+
+.table th,
+.table td {
+    border: 1px solid #ddd; /* Visible borders for cells */
+    padding: 8px; /* Add some padding inside cells */
+    text-align: left;
+}
+
+.table th {
+    background-color: #f2f2f2; /* Light gray background for headers */
+    font-weight: bold;
+}
+
+.subject1,
+.subject2{
+    display: block;
+    color: #fff;
+    font-size: 70px;
+    font-weight: bold;
+    position: absolute; /* Changed from fixed to absolute */
+    top: 17%; /* Adjusts the vertical position */
+    left: 75px; /* Adjusts the horizontal position to the left */
+    z-index: 99;
+    left: 75px; /* Adjusts the horizontal position to the left */
+}
+
+.subject1
+{
+    top: 77%; /* Adjusts the vertical position */
+}
+
+.subject2
+{
+    top: 121%; /* Adjusts the vertical position */
 }

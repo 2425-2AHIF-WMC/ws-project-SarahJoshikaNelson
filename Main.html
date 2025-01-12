@@ -3,68 +3,220 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Disney World</title>
+    <title>Text Animation</title>
     <link rel="stylesheet" href="MainStyle.css">
 </head>
-
 <body>
-    <header class="header">
-        <a href = "#" class = "logo">Logo</a>
+<!-- Starting image container -->
+<div class="starting-screen">
+    <img src="start.jpg" alt="Starting Background" class="starting-image">
+    <div class="starting-text">Welcome to Our Website</div>
+</div>
 
-        <nav class = "navbar">
-            <a href="#">Home</a>
-            <a href="#">Theme Park</a>
-            <a href="#">Movies & Series</a>
-            <a href="#">Characters</a>
-        </nav>
-    </header>
+<!-- Header Section -->
+<header class="header">
+    <img class="element" src="DisneyLogo.png" width="200px" height="400px">
+    <nav class="navbar">
+        <a href="Main.html">Home</a>
+        <a href="ThemePark.html">Theme Park</a>
+        <a href="Movies&Series.html">Movies & Series</a>
+        <a href="Characters.html">Characters</a>
+    </nav>
+</header>
 
-    <div class = "blog-card">
-        <div class="sliders">
-            <label for="" class="tap tap-1 "></label>
-            <label for="" class="tap tap-2 "></label>
-            <label for="" class="tap tap-3 "></label>
+<span class = "subject1">Awards</span>
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col">Year</th>
+        <th scope="col">Award</th>
+        <th scope="col">Details</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>1932</td>
+        <td>
+            <span class="award" data-image="mickey_mouse.jpg">Honorary Academy Award</span>
+        </td>
+        <td>For creating Mickey Mouse.</td>
+    </tr>
+    <tr>
+        <td>1939</td>
+        <td>
+            <span class="award" data-image="snow_white.jpg">Special Academy Award</span>
+        </td>
+        <td>For Snow White and the Seven Dwarfs, awarded along with seven miniature Oscars.</td>
+    </tr>
+    <tr>
+        <td>1955</td>
+        <td>
+            <span class="award" data-image="emmy_awards.jpg">Emmy Award</span>
+        </td>
+        <td>"Best Producer – Film Series" for the Disneyland TV series.</td>
+    </tr>
+    <tr>
+        <td>1964</td>
+        <td>
+            <span class="award" data-image="freedom_medal.jpg">Presidential Medal of Freedom</span>
+        </td>
+        <td>Awarded by President Lyndon B. Johnson.</td>
+    </tr>
+    <tr>
+        <td>2024</td>
+        <td>
+            <span class="award" data-image="shogun.jpg">'Shogun' Wins Best Drama</span>
+        </td>
+        <td>Secured Best Drama at the 2024 Emmy Awards.</td>
+    </tr>
+    </tbody>
+</table>
+<span class = "subject2">Story</span>
+<div class="blog-card">
 
-        </div>
-        <div class = "inner-part">
-            <label for="" class = "img">
-                <img src="founder.jpg" alt="Mr. Walt">
-            </label>
+    <input type="radio" name="select" id="tap-1" checked>
+    <input type="radio" name="select" id="tap-2">
+    <input type="radio" name="select" id="tap-3">
+    <input type="checkbox" id="tapImg">
+    <div class="sliders">
+        <label for="tap-1" class="tap tap-1"></label>
+        <label for="tap-2" class="tap tap-2"></label>
+        <label for="tap-3" class="tap tap-3"></label>
+    </div>
 
-            <div class="content">
-                <span>Founder of Disney</span>
-                <div class="title">Mr Walt.</div>
-                <div class="text">Mr Waltt text</div>
-                <button> Read more</button>
+    <div class="inner-part">
+        <label for="tapImg" class="img">
+            <img class="img-1" src="founder.jpg" alt="Mr. Walt">
+        </label>
+        <div class="content content-1">
+            <br><br>
+            <div class="title">Who Was Walt Disney?</div>
+            <ul>
+                <li>Walter Elias Disney (1901–1966) was a visionary animator and entertainment icon.</li>
+                <li>Raised in Missouri, he developed a love for drawing and storytelling.</li>
+                <li>Co-founded the Walt Disney Company, turning it into a global cultural powerhouse.</li>
+            </ul>
+            <span>Discover Walt's early life, his struggles, and the journey that shaped his creative spirit.</span>
+            <div class="text">
+                The original Disney theme park, Disneyland is where it all began. It's divided into eight themed lands,
+                including Main Street, U.S.A., Adventureland, and Tomorrowland. Highlights include classic attractions like
+                Pirates of the Caribbean, Space Mountain, and the Haunted Mansion.
+            </div>
+
+            <!-- Checkbox for toggling -->
+            <input type="checkbox" id="read-more-toggle-1" class="read-more-toggle">
+
+            <!-- Label for the checkbox -->
+            <label for="read-more-toggle-1" class="button">Details</label>
+
+            <!-- Content to show/hide -->
+            <div class="more-content">
+                <div class="text-box1">
+                    <span>Walt Disney’s Early Life</span>
+                    <p>Walter Elias Disney was born on December 5, 1901, in Chicago, Illinois. Raised on a farm in Marceline, Missouri, young Walt developed a love for drawing, often sketching animals and nature around him. His early fascination with storytelling grew stronger as he attended art classes and sold small drawings to neighbors.</p>
+                    <br>
+                    <p>At age 16, Walt dropped out of high school to join the Red Cross during World War I, where he worked as an ambulance driver in France. Upon returning, he pursued art full-time, moving to Kansas City to work at a commercial art studio.</p>
+                    <br><br>
+                    <span>Early Struggles</span>
+                    <p>Walt faced significant challenges early in his career. His first animation company, Laugh-O-Gram Studios, went bankrupt in 1923. Despite this setback, he moved to Hollywood with little money but big dreams. There, he and his brother Roy started the Disney Brothers Studio, laying the foundation for his future success.</p>
+                    <br><br>
+                    <span>The Spark of Genius</span>
+                    <p>Even after losing rights to his first successful cartoon character, Oswald the Lucky Rabbit, Walt refused to give up. This loss inspired him to create Mickey Mouse, debuting in Steamboat Willie, the first synchronized sound cartoon. The rest is history.</p>
+
+                </div>
+
             </div>
         </div>
 
-        <div class = "inner-part">
-            <label for="" class = "img">
-                <img src="founder.jpg" alt="Mr. Walt">
-            </label>
 
-            <div class="content">
-                <span>Founder of Disney</span>
-                <div class="title">Mr Walt.</div>
-                <div class="text">Mr Waltt text</div>
-                <button> Read more</button>
-            </div>
-        </div>
+    </div>
+    <div class="inner-part">
+        <label for="tapImg" class="img">
+            <img class="img-2" src="Animations.jpg" alt="Mr. Walt">
+        </label>
+        <div class="content content-2">
+            <br><br><br><br><br><br>
+            <div class="title">Innovating Animation</div>
+            <ul>
+                <li>In the 1930s, Walt Disney focused on advancing animation technology and storytelling.</li>
+                <li>He pioneered the use of Technicolor in animated shorts, creating vibrant films like Flowers and Trees (1932).</li>
+                <li>Snow White and the Seven Dwarfs (1937) became the first full-length animated feature, a groundbreaking achievement in cinema.</li>
+                <li>He also created the Silly Symphonies series, blending music and animation to captivate audiences.</li>
+            </ul>
+            <span>Explore how Walt Disney transformed animation from simple shorts to immersive cinematic experiences.</span>
 
-        <div class = "inner-part">
-            <label for="" class = "img">
-                <img src="founder.jpg" alt="Mr. Walt">
-            </label>
 
-            <div class="content">
-                <span>Founder of Disney</span>
-                <div class="title">Mr Walt.</div>
-                <div class="text">Mr Waltt text</div>
-                <button> Read more</button>
+
+            <!-- Checkbox for toggling -->
+            <input type="checkbox" id="read-more-toggle-2" class="read-more-toggle">
+
+            <!-- Label for the checkbox -->
+            <label for="read-more-toggle-2" class="button">Details</label>
+
+            <!-- Content to show/hide -->
+            <div class="more-content">
+                <div class="text-box2">
+                    <span>Pioneering Technicolor Animation</span>
+                    <p>In the early 1930s, Walt Disney revolutionized animation by incorporating Technicolor, a technology that brought rich, vivid colors to the screen. The short film Flowers and Trees (1932) became the first full-color animated film and earned an Academy Award, setting new standards for the industry.</p>
+                    <br><br>
+                    <span>The First Animated Feature Film</span>
+                    <p>Walt’s bold vision led to the creation of Snow White and the Seven Dwarfs (1937), the first full-length animated feature film. Despite skepticism from critics and financial risks, the film became a worldwide phenomenon, proving animation could tell deep, compelling stories.</p>
+                    <br><br>
+                    <span>Experimenting with Silly Symphonies</span>
+                    <p>The Silly Symphonies series allowed Walt and his team to experiment with combining music and animation in innovative ways. These shorts introduced groundbreaking techniques, including synchronized sound, advanced character expressions, and visual effects that enhanced emotional storytelling.</p>
+
+                </div>
+
             </div>
         </div>
     </div>
-</body>
+    <div class="inner-part">
+        <label for="tapImg" class="img">
+            <img class="img-3" src="MickeyMausClub.jpg" alt="Mr. Walt">
+        </label>
+        <div class="content content-3">
+            <br><br><br><br><br><br>
+            <div class="title">Expanding the Disney Dream</div>
+            <ul>
+                <li>After World War II, Walt expanded into live-action films, producing hits like Treasure Island (1950).</li>
+                <li>He also ventured into television, launching The Mickey Mouse Club and popular anthology shows.</li>
+                <li>Disneyland became a reality in 1955, a testament to Walt’s vision of immersive, family-friendly entertainment.</li>
+                <li>By the 1960s, Walt had ambitious plans for EPCOT, a community centered on innovation and progress.</li>
+            </ul>
+            <span>Uncover how Walt Disney’s diverse projects shaped modern entertainment and inspired global audiences.</span>
 
+
+
+            <!-- Checkbox for toggling -->
+            <input type="checkbox" id="read-more-toggle-3" class="read-more-toggle">
+
+            <!-- Label for the checkbox -->
+            <label for="read-more-toggle-3" class="button">Details</label>
+
+            <!-- Content to show/hide -->
+            <div class="more-content">
+                <div class="text-box3">
+                    <span>Venturing into Live-Action Films</span>
+                    <p>In the post-war years, Walt Disney broadened his creative horizons by producing live-action films. Treasure Island (1950) became Disney's first full-length live-action movie, captivating audiences with its adventurous spirit. This success paved the way for other live-action classics, including 20,000 Leagues Under the Sea (1954).</p>
+                    <br><br>
+                    <span>Making Magic on Television</span>
+                    <p>Walt embraced the growing medium of television in the 1950s. He launched The Mickey Mouse Club, a beloved children’s program that introduced audiences to new stars and characters. His anthology series, later called The Wonderful World of Disney, brought Disney’s magic into homes, showcasing behind-the-scenes glimpses of his projects and classic stories.</p>
+                    <br><br>
+                    <span>The Birth of Disneyland</span>
+                    <p>Walt’s dream of creating a place where families could experience stories together came to life in 1955 with the opening of Disneyland in Anaheim, California. Blending technology, storytelling, and design, Disneyland was the first of its kind—a theme park that transported visitors into fantastical worlds.</p>
+                    <br><br>
+                    <span>EPCOT: A Vision for Tomorrow</span>
+                    <p>By the 1960s, Walt imagined EPCOT (Experimental Prototype Community of Tomorrow), a futuristic city showcasing innovative technologies and urban planning. Though it wasn’t fully realized in his lifetime, EPCOT inspired modern urban design and became a cornerstone of Walt Disney World in Florida.</p>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+</body>
 </html>
